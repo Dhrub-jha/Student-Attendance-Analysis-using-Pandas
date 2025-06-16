@@ -4,18 +4,27 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from io import StringIO
+import os
 
 st.set_page_config(page_title="Student Attendance Analysis", layout="wide", page_icon="📊")
 st.title("📊 Student Attendance Analysis")
+
+# Set up directories
+os.makedirs('exports', exist_ok=True)
+os.makedirs('data', exist_ok=True)
 
 st.sidebar.header("Upload Attendance Data")
 uploaded_file = st.sidebar.file_uploader("Choose a CSV or Excel file", type=["csv", "xlsx"])
 
 if uploaded_file:
+    # Save uploaded file to data folder
+    file_path = os.path.join('data', uploaded_file.name)
+    with open(file_path, 'wb') as f:
+        f.write(uploaded_file.getbuffer())
     if uploaded_file.name.endswith('.csv'):
-        df = pd.read_csv(uploaded_file)
+        df = pd.read_csv(file_path)
     else:
-        df = pd.read_excel(uploaded_file)
+        df = pd.read_excel(file_path)
     st.success("Data loaded successfully!")
     st.write("### Raw Data", df)
 
@@ -55,6 +64,9 @@ if uploaded_file:
     # Export cleaned data
     st.subheader("📤 Export Cleaned Data")
     csv = df_clean.to_csv(index=False).encode('utf-8')
+    export_path = os.path.join('exports', 'cleaned_attendance.csv')
+    with open(export_path, 'wb') as f:
+        f.write(csv)
     st.download_button("Download Cleaned CSV", csv, "cleaned_attendance.csv", "text/csv")
 else:
     st.info("Please upload an attendance CSV or Excel file to begin analysis.")

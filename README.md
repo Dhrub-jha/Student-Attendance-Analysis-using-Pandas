@@ -28,3 +28,19 @@ A Python-based data analysis tool that processes and visualizes student attendan
 
 ## 📂 Folder Structure
 
+```
+- src/
+    - attendance_app.py
+    - (other source files)
+- data/
+    - usersattendance.csv
+    - (user-uploaded files)
+- exports/
+    - cleaned_attendance.csv
+    - (exported reports)
+- requirements.txt
+- README.md
+- .gitignore
+- venv/
+```
+
