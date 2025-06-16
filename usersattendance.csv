@@ -1,0 +1,16 @@
+StudentID,Name,Department,Date,Attendance
+S001,Aryan Sharma,Computer Science,2025-06-01,Present
+S002,Neha Verma,Computer Science,2025-06-01,Absent
+S003,Rahul Joshi,Computer Science,2025-06-01,Present
+S001,Aryan Sharma,Computer Science,2025-06-02,Present
+S002,Neha Verma,Computer Science,2025-06-02,Present
+S003,Rahul Joshi,Computer Science,2025-06-02,Absent
+S001,Aryan Sharma,Computer Science,2025-06-03,Absent
+S002,Neha Verma,Computer Science,2025-06-03,Present
+S003,Rahul Joshi,Computer Science,2025-06-03,Present
+S001,Aryan Sharma,Computer Science,2025-06-04,Present
+S002,Neha Verma,Computer Science,2025-06-04,Absent
+S003,Rahul Joshi,Computer Science,2025-06-04,Present
+S001,Aryan Sharma,Computer Science,2025-06-05,Present
+S002,Neha Verma,Computer Science,2025-06-05,Present
+S003,Rahul Joshi,Computer Science,2025-06-05,Absent
